@@ -52,10 +52,11 @@ jobs:
     - name: Build Soroban contracts (wasm32-unknown-unknown)
       run: |
         cargo build \
-          -p auction_contract \
-          -p core_contract \
-          -p escrow_contract \
-          -p factory_contract \
+          -p collateral-vault \
+          -p lending-pool \
+          -p liquidation-engine \
+          -p oracle-adapter \
+          -p shared \
           --target wasm32-unknown-unknown \
           --release \
           --verbose
