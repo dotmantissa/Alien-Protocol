@@ -226,7 +226,11 @@ impl VaultContract {
         }
 
         let token_client = token::Client::new(&env, &asset);
-        token_client.transfer(&env.current_contract_address(), &liquidation_engine, &amount);
+        token_client.transfer(
+            &env.current_contract_address(),
+            &liquidation_engine,
+            &amount,
+        );
 
         events::CollateralSeized {
             user,
